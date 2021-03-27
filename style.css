@@ -79,7 +79,7 @@ body {
     background: linear-gradient(90deg, #9167c2 0%, #7b5d9b 35%, #503074 100%);
     font-family: 'Decalotype';
     font-size: 50px;
-    padding: 10px;
+    padding: 8px;
     text-align: left;
   }
 
@@ -102,4 +102,8 @@ body {
 
 #logo {
     filter: invert(100%);
+}
+
+a {
+    text-decoration: none;
 }
