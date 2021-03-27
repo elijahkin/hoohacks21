@@ -1,3 +1,6 @@
+var images = ["images/banana.png", "images/apple.png", "images/orange.png", "images/peach.png"];
+var transitions = ["banana", "apple", "orange", "peach"];
+
 // Sets up memory palace after text is inputted
 function go() {
     roomIter = 0;
@@ -14,8 +17,8 @@ function swapVisibility() {
 
 // Updates transition text and image with current value of roomIter
 function updateRoom() {
-    document.getElementById("transition").innerHTML = roomIter;
-    document.getElementById("image").src = "images/orange.png";
+    document.getElementById("transition").innerHTML = transitions[roomIter];
+    document.getElementById("image").src = images[roomIter];
 }
 
 // Increments roomIter by one, calls updateRoom
