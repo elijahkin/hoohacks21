@@ -6,7 +6,7 @@ let text = null;
 let roomCount = 0;
 // Sets up memory palace after text is inputted
 function go() {
-    text = document.getElementById("memtext").value;
+    text = document.getElementById("memtext").value.toLowerCase();
     roomCount = text.length - 1;
     updateRoom();
     swapVisibility();
