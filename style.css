@@ -8,6 +8,11 @@
     src: URL('fonts/RobotoSlab.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Decalotype';
+    src: URL('fonts/Decalotype.ttf') format('truetype');
+}
+
 :root {
     --purple:#9167c2;
     --sand:#d8d8b8;
@@ -72,10 +77,10 @@ body {
 .header {
     color: var(--offwhite);
     background: linear-gradient(90deg, #9167c2 0%, #7b5d9b 35%, #503074 100%);
-    font-family: 'Quicksand';
-    font-size: 60px;
-    padding: 20px;
-    text-align: center;
+    font-family: 'Decalotype';
+    font-size: 50px;
+    padding: 10px;
+    text-align: left;
   }
 
 #input {
@@ -93,4 +98,8 @@ body {
 
 #controls {
     padding-top: 30px;
+}
+
+#logo {
+    filter: invert(100%);
 }
