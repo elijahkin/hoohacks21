@@ -1,4 +1,4 @@
-let images = {"b":"images/banana.png", "a":"images/apple.png", "o":"images/orange.png", "p":"images/peach.png"}
+let images = {"b":"banana.png", "a":"apple.png", "o":"orange.png", "p":"peach.png"}
 let transitions = ["door left", "walk", "run", "jog"];
 let used = [];
 let roomIter = 0;
@@ -6,13 +6,13 @@ let text = null;
 let roomCount = 0;
 
 document.onkeydown = function(e){
-    if (e.keyCode == 39) {
+    if (e.keyCode === 39) {
         next();
     }
-    else if (e.keyCode == 37) {
+    else if (e.keyCode === 37) {
         prev();
     }
-    else if (e.keyCode == 13) {
+    else if (e.keyCode === 13) {
         go();
     }
 };
@@ -40,7 +40,7 @@ function updateRoom() {
         transitions.splice(index, 1);
     }
     document.getElementById("transition").innerHTML = used[roomIter];
-    document.getElementById("image").src = images[text[roomIter]];
+    document.getElementById("image").src = "images/"+images[text[roomIter]];
 }
 
 // Increments roomIter by one, calls updateRoom
