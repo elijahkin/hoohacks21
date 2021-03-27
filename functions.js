@@ -1,10 +1,10 @@
-// var images = ["images/banana.png", "images/apple.png", "images/orange.png", "images/peach.png"];
 let images = {"b":"images/banana.png", "a":"images/apple.png", "o":"images/orange.png", "p":"images/peach.png"}
 let transitions = ["door left", "walk", "run", "jog"];
 let used = [];
 let roomIter = 0;
 let text = null;
 let roomCount = 0;
+
 // Sets up memory palace after text is inputted
 function go() {
     text = document.getElementById("memtext").value.toLowerCase();
@@ -52,6 +52,7 @@ function restart() {
     updateRoom();
 }
 
+// Converts rooms to text
 function toText(){
     let out = "";
     out += text + "\n";
@@ -59,19 +60,13 @@ function toText(){
     return out;
 }
 
+// Downloads text file containing rooms and images
 function download() {
     const element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(toText()));
     element.setAttribute('download', "Memory_Palace.txt");
-
     element.style.display = 'none';
     document.body.appendChild(element);
-
     element.click();
-
     document.body.removeChild(element);
-}
-
-function readText(){
-
 }
