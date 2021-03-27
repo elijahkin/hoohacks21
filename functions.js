@@ -1,5 +1,6 @@
-let images = {"b": "banana.png", "a": "apple.png", "o": "orange.png", "p": "peach.png"}
-let transitions = ["door left", "walk", "run", "jog"];
+let images = {"b": "banana.png", "a": "apple.png", "o": "orange.png", "p": "peach.png"};
+let descriptions = {"a": "apple", "b": "banana", "o":"orangetan", "p":"peach"};
+let transitions = ["In the middle of the room is a fire pole. You grab onto it and slide down.", "There are no doors in this room, so you have to punch your way out through the walls.", "Before you can get your bearings, a trap door opens up and you fall into a room below.", "There is a half-height wall along the back of this room. To get over it, you have to jump. Thankfully, there’s a trampoline nearby. You jump on it and soar over the wall.", "The next room is a highly secure vault. A long passcode is required to enter. You type in the first number you think of and the door swings open.", "You open a door on the right and creep down a spiral staircase into a room below.", "There’s also a mysterious ladder in the dimly-lit corner of the room, which you carefully climb up."];
 let used = [];
 let roomIter = 0;
 let text = null;
@@ -39,6 +40,7 @@ function updateRoom() {
     }
     document.getElementById("transition").innerHTML = used[roomIter];
     document.getElementById("image").src = "images/" + images[text[roomIter]];
+    document.getElementById("objtext").innerHTML = descriptions[text[roomIter]];
 }
 
 // Increments roomIter by one, calls updateRoom

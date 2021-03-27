@@ -75,7 +75,6 @@ body {
     font-family: 'Quicksand';
     font-size: 60px;
     padding: 20px;
-    float: center;
     text-align: center;
   }
 
@@ -90,4 +89,8 @@ body {
 #image {
     padding-top: 30px;
     padding-bottom: 20px;
+}
+
+#controls {
+    padding-top: 30px;
 }
