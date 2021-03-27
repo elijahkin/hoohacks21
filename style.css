@@ -51,6 +51,7 @@ body {
 
 #output {
     display: none;
+    padding: 100px;
 }
 
 #memtext {
@@ -72,7 +73,20 @@ body {
     background-color: var(--purple);
     font-family: 'Quicksand';
     font-size: 60px;
-    padding: 40px;
+    padding: 20px;
     float: center;
     text-align: center;
   }
+
+#input {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+}
+
+#image {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}

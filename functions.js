@@ -5,11 +5,23 @@ let roomIter = 0;
 let text = null;
 let roomCount = 0;
 
+document.onkeydown = function(e){
+    if (e.keyCode == 39) {
+        next();
+    }
+    else if (e.keyCode == 37) {
+        prev();
+    }
+    else if (e.keyCode == 13) {
+        go();
+    }
+};
+
 // Sets up memory palace after text is inputted
 function go() {
     text = document.getElementById("memtext").value.toLowerCase();
     roomCount = text.length - 1;
-    document.getElementById("image").height = 2/3*window.innerHeight;
+    document.getElementById("image").height = 1/2*window.innerHeight;
     updateRoom();
     swapVisibility();
 }
