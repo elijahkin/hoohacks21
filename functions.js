@@ -1,18 +1,16 @@
-let images = {"b":"banana.png", "a":"apple.png", "o":"orange.png", "p":"peach.png"}
+let images = {"b": "banana.png", "a": "apple.png", "o": "orange.png", "p": "peach.png"}
 let transitions = ["door left", "walk", "run", "jog"];
 let used = [];
 let roomIter = 0;
 let text = null;
 let roomCount = 0;
 
-document.onkeydown = function(e){
+document.onkeydown = function (e) {
     if (e.keyCode === 39) {
         next();
-    }
-    else if (e.keyCode === 37) {
+    } else if (e.keyCode === 37) {
         prev();
-    }
-    else if (e.keyCode === 13) {
+    } else if (e.keyCode === 13) {
         go();
     }
 };
@@ -21,7 +19,7 @@ document.onkeydown = function(e){
 function go() {
     text = document.getElementById("memtext").value.toLowerCase();
     roomCount = text.length - 1;
-    document.getElementById("image").height = 1/2*window.innerHeight;
+    document.getElementById("image").height = 1 / 2 * window.innerHeight;
     updateRoom();
     swapVisibility();
 }
@@ -34,13 +32,13 @@ function swapVisibility() {
 
 // Updates transition text and image with current value of roomIter
 function updateRoom() {
-    if(used[roomIter] == null){
+    if (used[roomIter] == null) {
         const index = Math.floor(Math.random() * transitions.length);
         used[roomIter] = transitions[index]
         transitions.splice(index, 1);
     }
     document.getElementById("transition").innerHTML = used[roomIter];
-    document.getElementById("image").src = "images/"+images[text[roomIter]];
+    document.getElementById("image").src = "images/" + images[text[roomIter]];
 }
 
 // Increments roomIter by one, calls updateRoom
@@ -66,7 +64,7 @@ function restart() {
 }
 
 // Converts rooms to text
-function toText(){
+function toText() {
     let out = "";
     out += text + "\n";
     out += JSON.stringify(used);
