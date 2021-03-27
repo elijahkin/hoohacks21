@@ -17,7 +17,25 @@ let descriptions = {
     "o":"This room contains an octopus eating oatcakes. You thought these things were supposed to be smart or something, but the joke it told you didn\'t really seem that funny.",
     "p":"Pants. Or, more precisely, the lack of them on you. How did you manage to leave the house without them? You\'re so paralysed with embarrassment that you don\'t notice what\'s in this room as you pass through.",
     "q":"All the answers regarding quantum mechanics are in this room.",
-    "r":"Racism^2",
+    "r":"Rats. Both literally and figuratively. You\'d better hurry up and leave before they force you to work as a waiter at Gusteau\'s restaurant for the rest of all eternity.",
+    "s":"",
+    "t":"",
+    "u":"",
+    "v":"",
+    "w":"There is a waterfall in this room; it\'s unclear where all the water is coming from. But it\'s very serene. You enjoy the sound for a few minutes, then carry on.",
+    "x":"Thank goodness, you\'ll finally be able to put your years of intense xylophone training to the test. You grab a mallet and start pounding out some sick tunes.",
+    "y":"",
+    "z":"",
+    "0":"You discover some macaroons in this room. Since eating all of them would be gluttonous, you decide to divide the macaroons among your friends. Alas, you realize too late that you have no friends. The divide by zero error erases your macaroons from existence.",
+    "1":"A bunch of rabid UVA sports fans are in this room, shouting WE ARE NUMBER ONE!!! You push past them.",
+    "2":"There is a sandwich in this room. It has TWO pieces of bread.",
+    "3":"In this room there is a fancy camera mounted at the top of a tripod.",
+    "4":"Some children are playing foursquare in this room. You grab their ball and run off before they can catch you.",
+    "5":"This room contains a table with a severed hand on it. You decide to take a hands off approach, and proceed hastily, palms sweating profusely.",
+    "6":"There are a bunch of dice in this room. They all have six sides",
+    "7":"There is a slot machine in this room. Each wheel displays a seven.",
+    "8":"There are a bunch of plates set out on a table in this room, but all you see is crumbs. Guess someone already EIGHT all of the food.",
+    "9":"There is a mean cat in this room. You have to kill it nine times."
 };
 let transitions = ["In the middle of the room is a fire pole. You grab onto it and slide down.", "There are no doors in this room, so you have to punch your way out through the walls.", "Before you can get your bearings, a trap door opens up and you fall into a room below.", "There is a half-height wall along the back of this room. To get over it, you have to jump. Thankfully, there\'s a trampoline nearby. You jump on it and soar over the wall.", "The next room is a highly secure vault. A long passcode is required to enter. You type in the first number you think of and the door swings open.", "You open a door on the right and creep down a spiral staircase into a room below.", "There\'s also a mysterious ladder in the dimly-lit corner of the room, which you carefully climb up."];
 let used = [];
