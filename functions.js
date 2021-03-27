@@ -51,3 +51,27 @@ function restart() {
     roomIter = 0;
     updateRoom();
 }
+
+function toText(){
+    let out = "";
+    out += text + "\n";
+    out += JSON.stringify(used);
+    return out;
+}
+
+function download() {
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(toText()));
+    element.setAttribute('download', "Memory_Palace.txt");
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+
+function readText(){
+
+}
