@@ -1,3 +1,36 @@
+:root {
+    --purple:#9167c2;
+    --sand:#d8d8b8;
+    --offwhite: #ffffff;
+}
+
+.button {
+    color: var(--offwhite);
+    background-color: var(--purple);
+
+    border: none;
+    padding: 16px 32px;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+
+.button:hover {opacity: 1}
+
+body {
+    text-align: center;
+    background-color: var(--sand);
+}
+
+input {
+    background-color: var(--purple);
+}
+
 #output {
     display: none;
 }
