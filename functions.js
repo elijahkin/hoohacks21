@@ -9,6 +9,7 @@ let roomCount = 0;
 function go() {
     text = document.getElementById("memtext").value.toLowerCase();
     roomCount = text.length - 1;
+    document.getElementById("image").height = 2/3*window.innerHeight;
     updateRoom();
     swapVisibility();
 }

@@ -66,3 +66,13 @@ body {
     background-color: var(--offwhite);
     padding-left: 15px;
 }
+
+.header {
+    color: var(--offwhite);
+    background-color: var(--purple);
+    font-family: 'Quicksand';
+    font-size: 60px;
+    padding: 40px;
+    float: center;
+    text-align: center;
+  }
