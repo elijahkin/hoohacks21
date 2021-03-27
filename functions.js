@@ -1,4 +1,5 @@
 let images = {"b": "banana.png", "a": "apple.png", "o": "orange.png", "p": "peach.png"};
+let startDescription = 'You enter the first room.'
 let descriptions = {
     "a":"The room contains nothing but a red apple. It looks tasty but it might be poisoned. You\'re hungry so you eat it anyways.",
     "b":"The room has some suspicious looking blue balls. They make you sad for some reason, so you continue on without playing them.",
@@ -75,7 +76,11 @@ function updateRoom() {
         used[roomIter] = transitions[index]
         transitions.splice(index, 1);
     }
-    document.getElementById("transition").innerHTML = used[roomIter];
+    if (roomIter > 0) {
+        document.getElementById("transition").innerHTML = used[roomIter];
+    } else {
+        document.getElementById("transition").innerHTML = startDescription;
+    }
     document.getElementById("image").src = "images/" + images[text[roomIter]];
     document.getElementById("objtext").innerHTML = descriptions[text[roomIter]];
 }
