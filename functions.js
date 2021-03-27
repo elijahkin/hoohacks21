@@ -1,4 +1,4 @@
-let images = {"b": "banana.png", "a": "apple.png", "o": "orange.png", "p": "peach.png"};
+let images = {"a": "a.jpg", "b": "b.jpg", "c": "c.jpg", "d": "d.jpg", "e": "e.jpg", "f": "f.jpg", "g": "g.jpg", "h": "h.jpg", "i": "i.jpg", "j": "j.jpg", "k": "k.jpg", "l": "l.jpg", "m": "m.jpg", "n": "n.jpg", "o": "o.jpg", "p": "p.jpg", "q": "q.jpg", "r": "r.jpg", "s": "s.jpg", "t": "t.jpg", "u": "u.jpg", "v": "v.jpg", "w": "w.jpg", "x": "x.jpg", "y": "y.jpg", "z": "z.jpg", "0": "0.jpg", "1": "1.jpg", "2": "2.jpg", "3": "3.jpg", "4": "4.jpg", "5": "5.png", "6": "6.jpg", "7": "7.jpg", "8": "8.jpg", "9": "9.jpg", ".": "dot.png", " ": " .jpg"};
 let startDescription = 'You enter the first room.'
 let descriptions = {
     "a":"The room contains nothing but a red apple. It looks tasty but it might be poisoned. You\'re hungry so you eat it anyways.",
@@ -21,12 +21,12 @@ let descriptions = {
     "r":"Rats. Both literally and figuratively. You\'d better hurry up and leave before they force you to work as a waiter at Gusteau\'s restaurant for the rest of all eternity.",
     "s":"A salesman assaults you the very moment you step into the room. Well, not physically. Apparently selling life insurance in a death labyrinth is a rather effective strategy.",
     "t":"A tutu wearing turtle in a tank toots a toy horn while timing talks with a tripping troll. You’re tired of this. You leave.",
-    "u":"You finally found it: the exit. Unfortunately, there is an Uno reverse card taped to the door. Completely defeated, you take a U-turn and head back the other way.",
-    "v":"You find a beautiful wooden instrument in this room. You can play the Violin, but unfortunately, you can’t tell if it’s actually a violin or just a viola. Since you can’t play the viola you are forced to proceed with no music.",
+    "u":"You finally found it: the exit. Unfortunately, there is an Uno reverse card taped to the door. Completely defeated, you take a u-turn and head back the other way.",
+    "v":"You find a beautiful wooden instrument in this room. You can play the violin, but unfortunately, you can’t tell if it’s actually a violin or just a viola. Since you can’t play the viola you are forced to proceed with no music.",
     "w":"There is a waterfall in this room; it\'s unclear where all the water is coming from. But it\'s very serene. You enjoy the sound for a few minutes, then carry on.",
     "x":"Thank goodness, you\'ll finally be able to put your years of intense xylophone training to the test. You grab a mallet and start pounding out some sick tunes.",
-    "y":"Time for a Yo-Yo break! You whip out your trusty yo-yo and begin performing some truly incredible tricks.",
-    "z":"This room is full of Zebras. As you walk through the mass of animals, you wonder what in the world they did to be forced to wear prison garb.",
+    "y":"Time for a yo-yo break! You whip out your trusty yo-yo and begin performing some truly incredible tricks.",
+    "z":"This room is full of zebras. As you walk through the mass of animals, you wonder what in the world they did to be forced to wear prison garb.",
     "0":"You discover some macaroons in this room. Since eating all of them would be gluttonous, you decide to divide the macaroons among your friends. Alas, you realize too late that you have no friends. The divide by zero error erases your macaroons from existence.",
     "1":"A bunch of rabid UVA sports fans are in this room, shouting WE ARE NUMBER ONE!!! You push past them.",
     "2":"There is a sandwich in this room. It has TWO pieces of bread.",
@@ -38,7 +38,7 @@ let descriptions = {
     "8":"There are a bunch of plates set out on a table in this room, but all you see is crumbs. Guess someone already EIGHT all of the food.",
     "9":"There is a mean cat in this room. You have to kill it nine times.",
     ".":"You finally found it. An actual point mass. Maybe your Physics professor wasn’t wasting your time after all.",
-    " ":"Space. The final frontier"
+    " ":"Space. The final frontier."
 };
 let transitions = ["In the middle of the room is a fire pole. You grab onto it and slide down.", "There are no doors in this room, so you have to punch your way out through the walls.", "Before you can get your bearings, a trap door opens up and you fall into a room below.", "There is a half-height wall along the back of this room. To get over it, you have to jump. Thankfully, there\'s a trampoline nearby. You jump on it and soar over the wall.", "The next room is a highly secure vault. A long passcode is required to enter. You type in the first number you think of and the door swings open.", "You open a door on the right and creep down a spiral staircase into a room below.", "There\'s also a mysterious ladder in the dimly-lit corner of the room, which you carefully climb up."];
 let used = [];
