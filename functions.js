@@ -2,12 +2,12 @@
 let images = {"b":"images/banana.png", "a":"images/apple.png", "o":"images/orange.png", "p":"images/peach.png"}
 let transitions = ["door left", "walk", "run", "jog"];
 let roomIter = 0;
-let text = "bba";
-let roomCount = text.length - 1;
+let text = null;
+let roomCount = 0;
 // Sets up memory palace after text is inputted
 function go() {
-    roomIter = 0;
-    roomCount = document.getElementById("memtext").value.length - 1;
+    text = document.getElementById("memtext").value;
+    roomCount = text.length - 1;
     updateRoom();
     swapVisibility();
 }
