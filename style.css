@@ -25,6 +25,7 @@ body {
     font-family: 'RobotoSlab';
     font-size: 20px;
     color: var(--purple);
+    margin: 0;
 }
 
 .button {
@@ -70,7 +71,7 @@ body {
 
 .header {
     color: var(--offwhite);
-    background-color: var(--purple);
+    background: linear-gradient(90deg, #9167c2 0%, #7b5d9b 35%, #503074 100%);
     font-family: 'Quicksand';
     font-size: 60px;
     padding: 20px;
