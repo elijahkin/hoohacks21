@@ -30,8 +30,9 @@ body {
 }
 
 .button {
-    color: var(--white);
-    background-color: var(--purple);
+    color: var(--purple);
+    background-color: var(--palegrey);
+    border: 3px solid var(--purple);
 
     font-family: 'Quicksand';
     font-size: 20px;
@@ -42,14 +43,15 @@ body {
     border-radius: 10px;
 
     outline: none;
-    border: none;
-    opacity: 0.6;
     transition: 0.3s;
     display: inline-block;
     cursor: pointer;
   }
 
-.button:hover {opacity: 1}
+.button:hover {
+    color: var(--white);
+    background-color: var(--purple);
+}
 
 #output {
     display: none;
@@ -58,7 +60,7 @@ body {
 }
 
 #memtext {
-    width: 400px;
+    width: 500px;
     height: 40px;
     outline: none;
     border: none;
