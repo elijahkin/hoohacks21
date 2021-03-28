@@ -8,15 +8,10 @@
     src: URL('fonts/RobotoSlab.ttf') format('truetype');
 }
 
-@font-face {
-    font-family: 'Decalotype';
-    src: URL('fonts/Decalotype.ttf') format('truetype');
-}
-
 :root {
     --purple:#9167c2;
-    --sand:#d8d8b8;
-    --offwhite: #ffffff;
+    --palegrey:#ced7db;
+    --white: #ffffff;
 }
 
 ::placeholder {
@@ -27,7 +22,7 @@
 body {
     overflow-y:hidden;
     text-align: center;
-    background-color: var(--sand);
+    background-color: var(--palegrey);
     font-family: 'RobotoSlab';
     font-size: 20px;
     color: var(--purple);
@@ -35,7 +30,7 @@ body {
 }
 
 .button {
-    color: var(--offwhite);
+    color: var(--white);
     background-color: var(--purple);
 
     font-family: 'Quicksand';
@@ -44,7 +39,7 @@ body {
     text-decoration: none;
     padding: 10px 20px;
     margin: 4px 4px;
-    border-radius: 15px;
+    border-radius: 10px;
 
     outline: none;
     border: none;
@@ -67,22 +62,25 @@ body {
     height: 40px;
     outline: none;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     font-family: 'Quicksand';
     font-size: 20px;
     text-justify: auto;
     color: var(--purple);
-    background-color: var(--offwhite);
+    background-color: var(--white);
     padding-left: 15px;
 }
 
 .header {
-    color: var(--offwhite);
+    font-family: 'RobotoSlab';
+    font-size: 50px;
+
+    color: var(--palegrey);
     background: linear-gradient(90deg, #9167c2 0%, #7b5d9b 35%, #503074 100%);
-    font-family: 'Decalotype';
-    font-size: 70px;
-    padding: 20px;
-    text-align: left;
+
+    text-align: center;
+    overflow: hidden;
+    padding: 10px;
   }
 
 #input {
@@ -94,7 +92,11 @@ body {
 }
 
 #controls {
-    padding-top: 30px;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 #logo {
@@ -105,4 +107,8 @@ body {
 
 a {
     text-decoration: none;
+}
+
+#image {
+    border-radius: 10px;
 }
