@@ -20,9 +20,9 @@ let descriptions = {
     "q":"All the answers regarding quantum mechanics are in this room.",
     "r":"Rats. Both literally and figuratively. You'd better hurry up and leave before they force you to work as a waiter at Gusteau's restaurant for the rest of all eternity.",
     "s":"A salesman assaults you the very moment you step into the room. Well, not physically. Apparently selling life insurance in a death labyrinth is a rather effective strategy.",
-    "t":"A tutu wearing turtle in a tank toots a toy horn while timing talks with a tripping troll. You’re tired of this. You leave.",
+    "t":"A tutu wearing turtle in a tank toots a toy horn while timing talks with a tripping troll. You\'re tired of this. You leave.",
     "u":"You finally found it: the exit. Unfortunately, there is an Uno reverse card taped to the door. Completely defeated, you take a u-turn and head back the other way.",
-    "v":"You find a beautiful wooden instrument in this room. You can play the violin, but unfortunately, you can\’t tell if it\’s actually a violin or just a viola. Since you can\’t play the viola you are forced to proceed with no music.",
+    "v":"You find a beautiful wooden instrument in this room. You can play the violin, but unfortunately, you can\'t tell if it\'s actually a violin or just a viola. Since you can\'t play the viola you are forced to proceed with no music.",
     "w":"There is a waterfall in this room; it\'s unclear where all the water is coming from. But it\'s very serene. You enjoy the sound for a few minutes, then carry on.",
     "x":"Thank goodness, you\'ll finally be able to put your years of intense xylophone training to the test. You grab a mallet and start pounding out some sick tunes.",
     "y":"Time for a yo-yo break! You whip out your trusty yo-yo and begin performing some truly incredible tricks.",
@@ -37,7 +37,7 @@ let descriptions = {
     "7":"There is a slot machine in this room. Each wheel displays a seven.",
     "8":"There are a bunch of plates set out on a table in this room, but all you see is crumbs. Guess someone already EIGHT all of the food.",
     "9":"There is a mean cat in this room. You have to kill it nine times.",
-    ".":"You finally found it. An actual point mass. Maybe your Physics professor wasn’t wasting your time after all.",
+    ".":"You finally found it. An actual point mass. Maybe your Physics professor wasn\'t wasting your time after all.",
     " ":"Space. The final frontier."
 };
 let transitions = ["In the middle of the room is a fire pole. You grab onto it and slide down.", "There are no doors in this room, so you have to punch your way out through the walls.", "Before you can get your bearings, a trap door opens up and you fall into a room below.", "There is a half-height wall along the back of this room. To get over it, you have to jump. Thankfully, there's a trampoline nearby. You jump on it and soar over the wall.", "The next room is a highly secure vault. A long passcode is required to enter. You type in the first number you think of and the door swings open.", "You open a door on the right and creep down a spiral staircase into a room below.", "There's also a mysterious ladder in the dimly-lit corner of the room, which you carefully climb up."];
