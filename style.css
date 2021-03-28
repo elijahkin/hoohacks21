@@ -20,7 +20,7 @@
 }
 
 body {
-    overflow-y:hidden;
+    /*overflow-y:hidden;*/
     text-align: center;
     background-color: var(--palegrey);
     font-family: 'RobotoSlab';
