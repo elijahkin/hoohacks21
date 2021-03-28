@@ -74,23 +74,24 @@ body {
 }
 
 .header {
-    font-family: 'RobotoSlab';
-    font-size: 50px;
-
-    color: var(--palegrey);
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(90deg, #9167c2 0%, #7b5d9b 35%, #503074 100%);
-
-    text-align: center;
     overflow: hidden;
     padding: 10px;
+}
+
+h1 {
+    /*display: flex;*/
+    font-family: 'RobotoSlab';
+    font-size: 50px;
+    color: var(--palegrey);
   }
 
 #input {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translateY(-50%);
-    transform: translateX(-50%);
+    margin-top: 50px;
 }
 
 #controls {
