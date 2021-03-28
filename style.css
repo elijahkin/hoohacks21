@@ -122,3 +122,12 @@ a {
     border-radius: 10px;
     max-width: 100%;
 }
+
+#aibutton {
+    background-color: var(--palegrey);
+}
+
+#aibutton:hover {
+    color: var(--white);
+    background-color: var(--purple);
+}
