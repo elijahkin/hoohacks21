@@ -136,30 +136,31 @@ a {
 }
 
 .split {
-    height: 90%;
-    top: 50%;
+    height: 100%;
+    top: 100%;
     width: 33.33%;
     position: absolute;
     z-index: 1;
     /*top: 0;*/
     overflow-x: hidden;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
     padding-top: 20px;
 }
 
 .left {
     left: 0;
-    background-color: #111;
+    background-color: white;
 }
 
 .right {
     right: 0;
-    background-color: red;
+    color: white;
+    background-color: var(--purple);
 }
 
 .center {
     right: 33.33%;
-    background-color: blue;
+    background-color:  var(--palegrey);
 }
 
 .centered {
