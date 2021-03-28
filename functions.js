@@ -159,6 +159,8 @@ function toggleAI() {
 
     }
     aiEnabled = !aiEnabled;
+}
+
 async function gptTransition() {
     let indices = []
     let prompt = ''
