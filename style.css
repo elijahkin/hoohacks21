@@ -93,7 +93,12 @@ h1 {
   }
 
 #input {
-    margin-top: 50px;
+    /*margin-top: 50px;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 
 #controls {
@@ -130,6 +135,43 @@ a {
     background-color: var(--purple);
 }
 
-#transition, #objtext {
-    margin: 8px 0;
+.split {
+    height: 100%;
+    top: 100%;
+    width: 33.33%;
+    position: absolute;
+    z-index: 1;
+    /*top: 0;*/
+    overflow-x: hidden;
+    /*overflow-y: scroll;*/
+    padding-top: 20px;
+}
+
+.left {
+    left: 0;
+    background-color: white;
+}
+
+.right {
+    right: 0;
+    color: white;
+    background-color: var(--purple);
+}
+
+.center {
+    right: 33.33%;
+    background-color:  var(--palegrey);
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.centered img {
+    width: 150px;
+    border-radius: 50%;
 }
