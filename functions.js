@@ -62,7 +62,7 @@ document.onkeydown = function (e) {
 function go() {
     text = document.getElementById("memtext").value.toLowerCase();
     roomCount = text.length - 1;
-    document.getElementById("image").height = 1 / 2 * window.innerHeight;
+    // document.getElementById("image").height = 1 / 2 * window.innerHeight;
     updateRoom();
     swapVisibility();
 }
@@ -70,7 +70,7 @@ function go() {
 // Hides input text box and button, unhides output text, canvas, and controls
 function swapVisibility() {
     document.getElementById("input").style.display = "none";
-    document.getElementById("output").style.display = "inline";
+    document.getElementById("output").style.display = "block";
 }
 
 // Updates transition text and image with current value of roomIter
