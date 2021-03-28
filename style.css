@@ -136,13 +136,14 @@ a {
 }
 
 .split {
-    height: 50%;
+    height: 90%;
     top: 50%;
     width: 33.33%;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     /*top: 0;*/
     overflow-x: hidden;
+    overflow-y: scroll;
     padding-top: 20px;
 }
 

@@ -99,6 +99,7 @@ function go() {
 // Hides input text box and button, unhides output text, canvas, and controls
 function swapVisibility() {
     document.getElementById("input").style.display = "none";
+    document.getElementById("info").style.display = "none";
     document.getElementById("output").style.display = "block";
 }
 
