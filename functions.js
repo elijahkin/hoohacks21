@@ -64,7 +64,7 @@ document.onkeydown = function (e) {
 function go() {
     text = document.getElementById("memtext").value.toLowerCase();
     roomCount = text.length - 1;
-    // document.getElementById("image").height = 1 / 2 * window.innerHeight;
+    document.getElementById("image").height = 1 / 2 * window.innerHeight;
     updateRoom();
     swapVisibility();
 }
@@ -88,11 +88,20 @@ function updateRoom() {
 
     document.getElementById("image").animate([{opacity: 1}, {opacity: 0}], 1000);
 
-    if (roomIter > 0) {
-        document.getElementById("transition").innerHTML = used[roomIter];
-    } else {
+    if (roomIter === 0) {
         document.getElementById("transition").innerHTML = startDescription;
     }
+    else {
+        if (aiEnabled === false) {
+            document.getElementById("transition").innerHTML = used[roomIter];
+        }
+        else {
+            gptTransition().then( gre => {
+                document.getElementById("transition").innerHTML = gre;
+            });
+        }
+    }
+
     document.getElementById("image").src = "images/" + images[text[roomIter]];
 
     let display_str = text[roomIter].toUpperCase();
@@ -172,7 +181,7 @@ async function gptTransition() {
         indices.push(idx)
         prompt += transitions[idx] + '. '
     }
-    const transitionStart = 'To get to the next room you '
+    const transitionStart = 'To get to the next room you'
     prompt += transitionStart
 
     const res = await fetch(`https://gpt2-grn5g74yeq-uk.a.run.app/?length=180&prompt=${encodeURIComponent(prompt)}`)
