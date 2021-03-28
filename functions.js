@@ -106,10 +106,24 @@ function updateRoom() {
     if (unused.length < 1) {
         unused = [...transitions];
     }
-    if (used[roomIter] == null) {
-        const index = Math.floor(Math.random() * unused.length);
-        used[roomIter] = unused[index]
-        unused.splice(index, 1);
+    if (used[roomIter] === undefined && roomIter !== 0) {
+        if(aiEnabled){
+            document.getElementById("next").disabled = true;
+            document.getElementById("prev").disabled = true;
+            document.getElementById("restart").disabled = true;
+            gptTransition().then( gre => {
+                used[roomIter] = gre;
+                document.getElementById("transition").innerHTML = used[roomIter];
+                document.getElementById("next").disabled = false;
+                document.getElementById("prev").disabled = false;
+                document.getElementById("restart").disabled = false;
+            });
+        }
+        else {
+            const index = Math.floor(Math.random() * unused.length);
+            used[roomIter] = unused[index]
+            unused.splice(index, 1);
+        }
     }
 
     document.getElementById("image").animate([{opacity: 1}, {opacity: 0}], 1000);
@@ -118,13 +132,11 @@ function updateRoom() {
         document.getElementById("transition").innerHTML = startDescription;
     }
     else {
-        if (aiEnabled === false) {
-            document.getElementById("transition").innerHTML = used[roomIter];
+        if(used[roomIter] === undefined) {
+            document.getElementById("transition").innerHTML = "Loading AI Generation From Server";
         }
-        else {
-            gptTransition().then( gre => {
-                document.getElementById("transition").innerHTML = gre;
-            });
+        else{
+            document.getElementById("transition").innerHTML = used[roomIter];
         }
     }
 
