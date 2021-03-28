@@ -136,7 +136,7 @@ function updateRoom() {
     }
     else {
         if(used[roomIter] === undefined) {
-            document.getElementById("transition").innerHTML = "Loading AI Generation From Server";
+            document.getElementById("transition").innerHTML = "Generating transition...";
         }
         else{
             document.getElementById("transition").innerHTML = used[roomIter];
@@ -236,7 +236,7 @@ async function gptTransition() {
     prompt += transitionStart
 
     console.log(`Prompt: ${prompt}`)
-    const res = await fetch(`https://gpt2-grn5g74yeq-uk.a.run.app/?length=150&temperature=0.3&prompt=${encodeURIComponent(prompt)}`)
+    const res = await fetch(`https://gpt2-grn5g74yeq-uk.a.run.app/?length=80&temperature=0.3&prompt=${encodeURIComponent(prompt)}`)
     const json = await res.json()
     const sentences = json.text.split('.')
     // const maxSentences = Math.random() > 0.5 ? 3 : 2
