@@ -91,7 +91,7 @@ document.onkeydown = function (e) {
 function go() {
     text = document.getElementById("memtext").value.toLowerCase();
     roomCount = text.length - 1;
-    document.getElementById("image").height = 1 / 2 * window.innerHeight;
+    // document.getElementById("image").height = 1 / 2 * window.innerHeight;
     updateRoom();
     swapVisibility();
 }
