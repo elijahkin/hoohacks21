@@ -84,7 +84,7 @@ function updateRoom() {
         unused.splice(index, 1);
     }
 
-    document.getElementById("output").animate([{opacity: 1}, {opacity: 0}], 1000);
+    document.getElementById("image").animate([{opacity: 1}, {opacity: 0}], 1000);
 
     if (roomIter > 0) {
         document.getElementById("transition").innerHTML = used[roomIter];
@@ -94,7 +94,7 @@ function updateRoom() {
     document.getElementById("image").src = "images/" + images[text[roomIter]];
     document.getElementById("objtext").innerHTML = descriptions[text[roomIter]];
 
-    document.getElementById("output").animate([{opacity: 0}, {opacity: 1}], 1000);
+    document.getElementById("image").animate([{opacity: 0}, {opacity: 1}], 1000);
 }
 
 // Increments roomIter by one, calls updateRoom
