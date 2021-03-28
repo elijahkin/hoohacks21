@@ -20,9 +20,9 @@ let descriptions = {
     "q":"All the answers regarding quantum mechanics are in this room.",
     "r":"Rats. Both literally and figuratively. You'd better hurry up and leave before they force you to work as a waiter at Gusteau's restaurant for the rest of all eternity.",
     "s":"A salesman assaults you the very moment you step into the room. Well, not physically. Apparently selling life insurance in a death labyrinth is a rather effective strategy.",
-    "t":"A tutu wearing turtle in a tank toots a toy horn while timing talks with a tripping troll. You’re tired of this. You leave.",
+    "t":"A tutu wearing turtle in a tank toots a toy horn while timing talks with a tripping troll. You\'re tired of this. You leave.",
     "u":"You finally found it: the exit. Unfortunately, there is an Uno reverse card taped to the door. Completely defeated, you take a u-turn and head back the other way.",
-    "v":"You find a beautiful wooden instrument in this room. You can play the violin, but unfortunately, you can\’t tell if it\’s actually a violin or just a viola. Since you can\’t play the viola you are forced to proceed with no music.",
+    "v":"You find a beautiful wooden instrument in this room. You can play the violin, but unfortunately, you can\'t tell if it\'s actually a violin or just a viola. Since you can\'t play the viola you are forced to proceed with no music.",
     "w":"There is a waterfall in this room; it\'s unclear where all the water is coming from. But it\'s very serene. You enjoy the sound for a few minutes, then carry on.",
     "x":"Thank goodness, you\'ll finally be able to put your years of intense xylophone training to the test. You grab a mallet and start pounding out some sick tunes.",
     "y":"Time for a yo-yo break! You whip out your trusty yo-yo and begin performing some truly incredible tricks.",
@@ -37,10 +37,34 @@ let descriptions = {
     "7":"There is a slot machine in this room. Each wheel displays a seven.",
     "8":"There are a bunch of plates set out on a table in this room, but all you see is crumbs. Guess someone already EIGHT all of the food.",
     "9":"There is a mean cat in this room. You have to kill it nine times.",
-    ".":"You finally found it. An actual point mass. Maybe your Physics professor wasn’t wasting your time after all.",
+    ".":"You finally found it. An actual point mass. Maybe your Physics professor wasn\'t wasting your time after all.",
     " ":"Space. The final frontier."
 };
-let transitions = ["In the middle of the room is a fire pole. You grab onto it and slide down.", "There are no doors in this room, so you have to punch your way out through the walls.", "Before you can get your bearings, a trap door opens up and you fall into a room below.", "There is a half-height wall along the back of this room. To get over it, you have to jump. Thankfully, there's a trampoline nearby. You jump on it and soar over the wall.", "The next room is a highly secure vault. A long passcode is required to enter. You type in the first number you think of and the door swings open.", "You open a door on the right and creep down a spiral staircase into a room below.", "There's also a mysterious ladder in the dimly-lit corner of the room, which you carefully climb up."];
+let transitions = `In the middle of the room is a fire pole. You grab onto it and slide down.
+
+There are no doors in this room, so you have to punch your way out through the walls.
+
+Before you can get your bearings, a trap door opens up and you fall into another room below.
+
+The next room is a highly secure vault. A long passcode is required to enter. You type in the first number you think of and the door swings open.
+
+You open a door on the right and creep down a spiral staircase into a room below.
+
+There's a mysterious ladder in the dimly-lit corner of the room, which you carefully climb up.
+
+At the other end of the room are what look like doors to an elevator. When the doors open, it turns out to be another room.
+
+You turn to the left and thoughtlessly walk through the doorway. You stumble as you walk off of a short ledge.
+
+You dive through a window rolling out into another room on the other side.
+
+You find a communicator and demand that it tell Scotty to "beam me up." Unfortunately, Scotty doesn't come through for you, so you simply walk through the door on the other side of the room.
+
+For some reason there appears to be a train stop built into this room. You take the automated vehicle to the next stop and get off.
+
+You find a barrel in the right hand corner of the room. You lift it above your head and jump up and down. With a flash of light, you clip through the floor into a brand new room.
+
+On the opposite side of the room stands two massive oak doors. After struggling to open them for a few seconds, you finally get them to creak open.`.split('\n\n')
 let transitionStarts = ["You enter the next room through", "To get to the next room you"]
 let used = [];
 let unused = [];
@@ -169,27 +193,33 @@ function toggleAI() {
     }
     aiEnabled = !aiEnabled;
 }
+const themes = `You are wandering through a deserted memory palace full of bizarre and colorful objects.
+
+You are exploring a deserted haunted house. Everything you see is extremely spooky.
+
+You are exploring a deserted castle. Everything you see is very memorable.`.split('\n\n')
 
 async function gptTransition() {
     let indices = []
-    let prompt = ''
-    for (let i = 0; i < 2; i++) {
+    let prompt = themes[1] + ' '
+    // let prompt = themes[Math.floor(Math.random() * themes.length)] + ' '
+    for (let i = 0; i < 1; i++) {
         let idx
         do {
             idx = Math.floor(Math.random() * transitions.length)
         } while (indices.includes(idx))
         indices.push(idx)
-        prompt += transitions[idx] + '. '
+        prompt += transitions[idx] + ' '
     }
-    const transitionStart = 'To get to the next room you'
+    const transitionStart = transitionStarts[Math.floor(Math.random() * transitionStarts.length)]
     prompt += transitionStart
 
-    const res = await fetch(`https://gpt2-grn5g74yeq-uk.a.run.app/?length=180&prompt=${encodeURIComponent(prompt)}`)
+    console.log(`Prompt: ${prompt}`)
+    const res = await fetch(`https://gpt2-grn5g74yeq-uk.a.run.app/?length=150&temperature=0.3&prompt=${encodeURIComponent(prompt)}`)
     const json = await res.json()
-    const sentences = json.text.split('. ')
-    const maxSentences = Math.random() > 0.5 ? 3 : 2
+    const sentences = json.text.split('.')
+    // const maxSentences = Math.random() > 0.5 ? 3 : 2
+    const maxSentences = 2
     const nSentences = Math.min(maxSentences, sentences.length - 1)
-    console.log('sentences are', sentences)
-    console.log('n will be', nSentences)
-    return transitionStart + sentences.slice(0, nSentences).join('. ') + '.'
+    return transitionStart + sentences.slice(0, nSentences).join('.') + '.'
 }
