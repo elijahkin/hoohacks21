@@ -137,3 +137,27 @@ function download() {
     element.click();
     document.body.removeChild(element);
 }
+
+async function gptTransition() {
+    let indices = []
+    let prompt = ''
+    for (let i = 0; i < 2; i++) {
+        let idx
+        do {
+            idx = Math.floor(Math.random() * transitions.length)
+        } while (indices.includes(idx))
+        indices.push(idx)
+        prompt += transitions[idx] + '. '
+    }
+    const transitionStart = 'To get to the next room you '
+    prompt += transitionStart
+
+    const res = await fetch(`https://gpt2-grn5g74yeq-uk.a.run.app/?length=180&prompt=${encodeURIComponent(prompt)}`)
+    const json = await res.json()
+    const sentences = json.text.split('. ')
+    const maxSentences = Math.random() > 0.5 ? 3 : 2
+    const nSentences = Math.min(maxSentences, sentences.length - 1)
+    console.log('sentences are', sentences)
+    console.log('n will be', nSentences)
+    return transitionStart + sentences.slice(0, nSentences).join('. ') + '.'
+}
