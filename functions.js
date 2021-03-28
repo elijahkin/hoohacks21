@@ -92,7 +92,7 @@ function updateRoom() {
         document.getElementById("transition").innerHTML = startDescription;
     }
     document.getElementById("image").src = "images/" + images[text[roomIter]];
-    document.getElementById("objtext").innerHTML = descriptions[text[roomIter]];
+    document.getElementById("objtext").innerHTML = text[roomIter].toUpperCase() + ": " + descriptions[text[roomIter]];
 
     document.getElementById("image").animate([{opacity: 0}, {opacity: 1}], 1000);
 }
@@ -137,7 +137,3 @@ function download() {
     element.click();
     document.body.removeChild(element);
 }
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
- }
