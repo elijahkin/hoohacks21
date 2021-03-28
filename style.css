@@ -62,7 +62,7 @@ body {
 }
 
 #memtext {
-    width: 500px;
+    width: 400px;
     height: 40px;
     outline: none;
     border: none;
@@ -125,6 +125,7 @@ a {
 
 #aibutton {
     background-color: var(--palegrey);
+    margin-right: 0px;
 }
 
 #aibutton:hover {
